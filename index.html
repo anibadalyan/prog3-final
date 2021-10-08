@@ -30,12 +30,6 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <h1>Ծրագրավորում III Երևան</h1>
-            </tr>
-            <tr>
-                <h1>Անուն Ազգանուն</h1>
-            </tr>
-            <tr>
                 <th scope="col">#</th>
                 <th scope="col">Գույն</th>
                 <th scope="col">Նկարագրություն</th>
@@ -46,45 +40,62 @@
             <tr>
                 <th scope="row">1</th>
                 <td scope="row" style="background-color:green;"></td>
-                <td>Կանաչը խոտն է, որը բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է խոտակերը, կամ այրում է
-                    կրակը, կամ նրան կոխկրտում է գիշատիչը</td>
+                <td>Կանաչը խոտն է, որը բազմանում, մահանում է երբ նրան ուտում է խոտակերը</td>
                 <td id="grassCount"></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
                 <td scope="row" style="background-color:orange;"></td>
-                <td>Դեղինը խոտակերն է, որը բազմանում է N հատ խոտ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
+                <td>Դեղինը խոտակերն է, որը բազմանում է  խոտ ուտելուց հետո և մահանում է եթե չի ուտում, կամ
                     երբ նրան ուտում է գիշատիչը:</td>
                 <td id="grassEaterCount"></td>
             </tr>
             <tr>
                 <th scope="row">3</th>
                 <td scope="row" style="background-color:red;"></td>
-                <td>Կարմիը գիշատիչն է, որը բազմանում է N հատ խոտակեր ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
-                    երբ նրան ուտում է միջատակերը:</td>
+                <td>Կարմիը գիշատիչն է, որը բազմանում է խոտակեր ուտելուց հետո և մահանում է եթե չի ուտում, կամ
+                    երբ նրան ուտում է գիշատիչ ուտողը:</td>
                 <td id="predatorCount"></td>
             </tr>
             <tr>
                 <th scope="row">4</th>
                 <td scope="row" style="background-color:pink"></td>
-                <td>Կարմիը գիշատիչն է, որը բազմանում է N հատ խոտակեր ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
-                    երբ նրան ուտում է միջատակերը:</td>
+                <td>Վարդագույնը գիշատիչն ուտողն է, որը բազմանում է գիշատիչ ուտելուց հետո և մահանում է եթե չի ուտում, կամ
+                    երբ նրան ուտում է գայլը :</td>
                 <td id="predatorEaterCount"></td>
             </tr>
             <tr>
                 <th scope="row">5</th>
                 <td scope="row" style="background-color:blue"></td>
-                <td>Կարմիը գիշատիչն է, որը բազմանում է N հատ խոտակեր ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
-                    երբ նրան ուտում է միջատակերը:</td>
+                <td>Կապույտը գայլն է, որը բազմանում է գիշատիչ ուտող ուտելուց հետո և մահանում է եթե չի ուտում, կամ
+                    երբ նրան ուտում է գայլակեր :</td>
                 <td id="wolfCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td scope="row" style="background-color:purple"></td>
+                <td>Մանուշակագույնը գայլակերն է, որը բազմանում է գայլ ուտելուց հետո և մահանում է եթե չի ուտում, կամ
+                    երբ նրան ուտում է առյուծը :</td>
+                <td id="wolfEaterCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td scope="row" style="background-color:black"></td>
+                <td>Սևը առյուծն է, որը բազմանում է գայլակեր ուտելուց հետո և մահանում է եթե չի ուտում :</td>
+                <td id="lionCount"></td>
             </tr>
         </tbody>
     </table>
     <button onclick="kill()">Kill them all</button>
      <button onclick="winter()">Winter</button>
-    <!-- <button onclick="summer()">Add grass</button>
-    <button onclick="spring()">Add grass</button>
-    <button onclick="autumn()">Add grass</button> --> 
+    <button onclick="summer()">Summer</button>
+    <button onclick="addGrass()">Add grass</button>
+    <button onclick="addGrassEater()">Add grass eater</button>
+    <button onclick="addPredator()">Add Predator</button>
+    <button onclick="addPredatorEater()">Add PredatorEater</button>
+    <button onclick="addWolf()">Add Wolf</button>
+    <button onclick="addWolfEater()">Add WolfEater</button>
+    <button onclick="addLion()">Add Lion</button>
     <script src="p5.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>

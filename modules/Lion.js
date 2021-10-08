@@ -3,10 +3,10 @@ var random = require("./random.js");
 
 
 
-module.exports = class Predator extends LiveForm {
+module.exports = class Lion extends LiveForm {
     constructor(x, y) {
         super(x, y);
-        this.life = 4;
+        this.life = 3;
     }
     getNewCoordinates() {
         this.directions = [
@@ -29,17 +29,17 @@ module.exports = class Predator extends LiveForm {
         let newCell = random(emptyCells);
 
         if (newCell) {
-            predatorHashiv++;
+            lionHashiv++;
             let x = newCell[0];
             let y = newCell[1];
-            matrix[y][x] = 3;
-            let predator = new Predator(x, y);
-            predatorArr.push(predator);
-            this.life = 5;
+            matrix[y][x] = 7;
+            let  lion = new Lion(x, y);
+            lionArr.push(lion);
+            this.life = 4;
         }
     }
     eat() {
-        let emptyCells = this.chooseCell(2);
+        let emptyCells = this.chooseCell(6);
         let newCell = random(emptyCells);
 
         if (newCell) {
@@ -48,12 +48,12 @@ module.exports = class Predator extends LiveForm {
             let x = newCell[0];
             let y = newCell[1];
 
-            matrix[y][x] = 3;
+            matrix[y][x] = 7;
             matrix[this.y][this.x] = 0;
 
-            for (let i in grassEaterArr) {
-                if (grassEaterArr[i].x == x && grassEaterArr[i].y == y) {
-                    grassEaterArr.splice(i, 1)
+            for (let i in wolfEaterArr) {
+                if (wolfEaterArr[i].x == x && wolfEaterArr[i].y == y) {
+                    wolfEaterArr.splice(i, 1)
                 }
             }
             this.x = x;
@@ -75,7 +75,7 @@ module.exports = class Predator extends LiveForm {
         if (newCell) {
             let x = newCell[0];
             let y = newCell[1];
-            matrix[y][x] = 3;
+            matrix[y][x] = 7;
             matrix[this.y][this.x] = 0;
             this.y = y;
             this.x = x;
@@ -87,9 +87,9 @@ module.exports = class Predator extends LiveForm {
     die() {
         matrix[this.y][this.x] = 0;
 
-        for (let i in predatorArr) {
-            if (predatorArr[i].x == this.x && predatorArr[i].y == this.y) {
-                predatorArr.splice(i, 1)
+        for (let i in  lionArr) {
+            if ( lionArr[i].x == this.x &&  lionArr[i].y == this.y) {
+                lionArr.splice(i, 1)
             }
         }
     }

@@ -6,7 +6,7 @@ var random = require("./random.js");
 module.exports = class Wolf extends LiveForm {
     constructor(x, y) {
         super(x, y);
-        this.life = 7;
+        this.life = 4;
     }
     getNewCoordinates() {
         this.directions = [
@@ -32,7 +32,7 @@ module.exports = class Wolf extends LiveForm {
             wolfHashiv++;
             let x = newCell[0];
             let y = newCell[1];
-            matrix[y][x] = 4;
+            matrix[y][x] = 5;
             let wolf = new Wolf(x, y);
             wolfArr.push(wolf);
             this.life = 5;
@@ -59,7 +59,7 @@ module.exports = class Wolf extends LiveForm {
             this.x = x;
             this.y = y;
 
-            if (this.life >= 9) {
+            if (this.life >= 6) {
                 this.mul();
             }
         }
